@@ -153,6 +153,8 @@
     nav a:hover { color: var(--ink); }
     .head-actions { display: flex; gap: 10px; }
     .head-actions .btn { padding: .6em 1.2em; }
+    .logo, .btn { white-space: nowrap; }
+    @media (max-width: 480px) { .logo { font-size: 1.2rem; } .head-actions { gap: 6px; } .head-actions .btn { padding: .5em .9em; font-size: .85rem; } }
     @media (max-width: 860px) { nav ul { display: none; } }
 
     /* Hero */
@@ -178,6 +180,17 @@
       background: var(--peach-500); color: #fff; font-size: .9rem;
     }
     @media (max-width: 860px) { .hero .wrap { grid-template-columns: 1fr; } }
+    .hero-visual { position: relative; }
+    .hero-visual img { display: block; width: 100%; height: auto; aspect-ratio: 700/685; object-fit: cover; border-radius: 28px; box-shadow: var(--shadow); }
+    .hero-visual .journey { position: absolute; left: -36px; bottom: -40px; width: min(290px, 80%); padding: 18px; border-radius: 20px; }
+    .hero-visual .journey h2 { font-size: 1rem; margin-bottom: 10px; }
+    .hero-visual .journey ol { gap: 6px; }
+    .hero-visual .journey li { padding: 8px 12px; font-size: .9rem; }
+    .hero-visual .journey li b { width: 26px; height: 26px; font-size: .8rem; }
+    @media (max-width: 860px) { .hero-visual .journey { position: static; width: auto; margin-top: 16px; } }
+    .section-head.split { display: grid; grid-template-columns: .8fr 1.2fr; gap: 56px; align-items: center; }
+    .section-head.split img { width: 100%; height: auto; max-height: 520px; object-fit: cover; object-position: top; border-radius: 28px; box-shadow: var(--shadow); }
+    @media (max-width: 860px) { .section-head.split { grid-template-columns: 1fr; gap: 28px; } .section-head.split img { max-height: 380px; } }
 
     /* Generic grids & cards */
     .grid { display: grid; gap: 22px; }
@@ -288,6 +301,8 @@
           <div><strong>1</strong><span>real business launched</span></div>
         </div>
       </div>
+      <div class="hero-visual">
+        <img src="images/students-team.webp" width="700" height="685" alt="Group of students celebrating with high-fives around a table covered in business sketches and a cardboard prototype" fetchpriority="high">
       <aside class="journey" aria-labelledby="journey-title">
         <h2 id="journey-title">Your journey: Learn, Build, Launch</h2>
         <ol>
@@ -297,16 +312,21 @@
           <li><b>4</b> Launch for real</li>
         </ol>
       </aside>
+      </div>
     </div>
   </section>
 
   <!-- 02 · Challenges and aspirations -->
   <section id="program" aria-labelledby="challenges-title">
     <div class="wrap">
-      <div class="section-head center">
-        <span class="eyebrow">Why Peachology</span>
-        <h2 id="challenges-title">Starting a business while studying shouldn't feel impossible</h2>
-        <p class="lead">You have ideas and ambition. What's usually missing is time, structure and someone who has done it before. We built the program around exactly that.</p>
+      <div class="section-head split">
+        <img src="images/student-founder.webp" width="470" height="690" loading="lazy" alt="Smiling student working on her business idea on a laptop alongside classmates">
+        <div>
+          <span class="eyebrow">Why Peachology</span>
+          <h2 id="challenges-title">Starting a business while studying shouldn't feel impossible</h2>
+          <p class="lead">You have ideas and ambition. What's usually missing is time, structure and someone who has done it before. We built the program around exactly that.</p>
+          <a class="btn btn-primary" href="#apply">Bring a friend and apply together</a>
+        </div>
       </div>
       <div class="grid g3">
         <article class="card">
